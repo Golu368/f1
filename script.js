@@ -210,7 +210,10 @@ if (document.readyState === 'loading') {
 }
 
 // Search Functionality
-const API_BASE = 'http://localhost:5000/api';
+// Automatically detect the API base URL (works for both local and production)
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000/api'
+    : '/api'; // Use relative path for production (Vercel)
 const searchBtn = document.getElementById('search-btn');
 const searchInput = document.getElementById('global-search-input') || document.getElementById('search-input');
 const resultsSection = document.getElementById('search-results');
