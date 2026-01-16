@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Fightpur</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/notes.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="fightpur.png" alt="Fightpur Logo" class="logo-img">
+                <span class="logo-text">Fightpur</span>
+            </a>
+
+            <!-- Toggle Button for Mobile Menu -->
+            <button class="toggle-btn" id="toggleBtn" aria-label="Toggle menu" aria-expanded="false">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="notes.html">Notes</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notes.html">Class 6–12 Notes</a></li>
+                        <li><a href="notes.html">Diploma Notes</a></li>
+                        <li><a href="notes.html">BTech Notes (CSE, ECE, ME, CE)</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="pyq.html">PYQ Papers</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pyq.html">Semester Exams</a></li>
+                        <li><a href="pyq.html">Board Exams</a></li>
+                        <li><a href="pyq.html">Entrance Exams</a></li>
+                        <li><a href="pyq.html">Competitive Exams</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="notes.html">Study Materials</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notes.html">PDFs</a></li>
+                        <li><a href="notes.html">Books & E-books</a></li>
+                        <li><a href="notes.html">Formula Sheets</a></li>
+                        <li><a href="notes.html">Lab Manuals</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="placement.html">Guidance</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="placement.html">Roadmaps</a></li>
+                        <li><a href="placement.html">Career Guidance</a></li>
+                        <li><a href="placement.html">Time Management</a></li>
+                        <li><a href="placement.html">Study Tips</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="placement.html">Placement Zone </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="placement.html">Placement Materials</a></li>
+                        <li><a href="placement.html">Interview Questions</a></li>
+                        <li><a href="placement.html">Company-Based Questions (TCS, Infosys...)</a></li>
+                        <li><a href="placement.html">Aptitude + Reasoning</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="jobs.html">Jobs & Updates</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">Latest Job Alerts</a></li>
+                        <li><a href="jobs.html">Government Jobs</a></li>
+                        <li><a href="jobs.html">Private Jobs</a></li>
+                        <li><a href="jobs.html">Internship Updates</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="jobs.html">Notifications</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">Exam Notification</a></li>
+                        <li><a href="jobs.html">Admit Card</a></li>
+                        <li><a href="jobs.html">Result Updates</a></li>
+                    </ul>
+                </li>
+                <li><a href="admin-login.html">Admin</a></li>
+            </ul>
+
+            <!-- Dark Mode Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section>
+        <h1>📚 Study Notes Library</h1>
+        <p>Download comprehensive notes for Class 6–12, Diploma, BTech (CSE, ECE, ME, CE), and more. Filter by category.</p>
+        
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="class">Class 6-12</button>
+            <button class="filter-btn" data-filter="diploma">Diploma</button>
+            <button class="filter-btn" data-filter="btech">BTech</button>
+            <button class="filter-btn" data-filter="reference">Reference</button>
+            <button class="filter-btn" data-filter="uploads">Uploads</button>
+        </div>
+
+        <div class="trending-grid">
+            <!-- Class 6-12 Section -->
+            <div class="card" data-category="class" data-course="school">
+                <div class="card-icon">📖</div>
+                <h3>Class 6–12 Notes</h3>
+                <p>NCERT-based notes for all subjects with examples.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="class">
+                <div class="card-icon">📐</div>
+                <h3>Mathematics Notes</h3>
+                <p>Algebra, Geometry, Trigonometry, Calculus.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="class">
+                <div class="card-icon">🧪</div>
+                <h3>Science Notes</h3>
+                <p>Physics, Chemistry, Biology comprehensive guide.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+
+            <!-- Diploma Section -->
+            <div class="card" data-category="diploma" data-course="diploma">
+                <div class="card-icon">🎓</div>
+                <h3>Diploma Notes</h3>
+                <p>Engineering diploma materials for all branches.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="diploma" data-course="diploma">
+                <div class="card-icon">⚙️</div>
+                <h3>Mechanical Engineering</h3>
+                <p>Thermodynamics, Mechanics, Fluid Mechanics.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="diploma" data-course="diploma">
+                <div class="card-icon">💡</div>
+                <h3>Electrical Engineering</h3>
+                <p>Circuit Theory, Power Systems, Machines.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+
+            <!-- BTech Section -->
+            <div class="card" data-category="btech" data-course="btech" data-branch="cse">
+                <div class="card-icon">💻</div>
+                <h3>BTech CSE Notes</h3>
+                <p>Data Structures, Algorithms, DBMS, Networks.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="btech" data-course="btech" data-branch="ece">
+                <div class="card-icon">📡</div>
+                <h3>BTech ECE Notes</h3>
+                <p>Signals & Systems, Digital Design, Communications.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="btech" data-course="btech" data-branch="me">
+                <div class="card-icon">🔧</div>
+                <h3>BTech Mechanical</h3>
+                <p>Advanced Mechanics, CAD, Manufacturing Process.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+
+            <!-- Reference Section -->
+            <div class="card" data-category="reference" data-course="reference">
+                <div class="card-icon">📊</div>
+                <h3>Formula Sheets</h3>
+                <p>Quick reference for math, physics & chemistry.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="reference" data-course="reference">
+                <div class="card-icon">📝</div>
+                <h3>Important Questions</h3>
+                <p>Previous exam questions with solutions.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            <div class="card" data-category="reference" data-course="reference">
+                <div class="card-icon">🎯</div>
+                <h3>Quick Revision Notes</h3>
+                <p>Condensed notes for last-minute revision.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+            
+            <!-- Student Uploads Category -->
+            <div class="card" data-category="uploads" data-course="uploads">
+                <div class="card-icon">👨‍🎓</div>
+                <h3>DAA Unit 1 Notes</h3>
+                <p>Subject: Data Structures (Student Upload)</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card" data-category="uploads" data-course="uploads">
+                <div class="card-icon">👩‍🎓</div>
+                <h3>Class 12 Physics Numericals</h3>
+                <p>Subject: Physics (Student Upload)</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+            <div class="card" data-category="uploads" data-course="uploads">
+                <div class="card-icon">🧠</div>
+                <h3>BTech CSE Sem 3 Cheatsheet</h3>
+                <p>Subject: Operating Systems (Student Upload)</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h2>Contribute Your Notes</h2>
+            <p>Help other students by sharing your notes. Get recognized as a contributor!</p>
+            <a href="#" id="upload-toggle-btn-notes" class="btn btn-primary">Upload Notes Now</a>
+        </div>
+
+        <!-- Upload Form Modal -->
+        <div id="upload-panel-notes" class="upload-panel">
+            <div class="upload-panel__header">
+                <div>
+                    <p class="pill">Admin-reviewed uploads</p>
+                    <h3>Share your notes</h3>
+                    <p class="muted">Supported: PDF, DOC, DOCX, PPT, PPTX, PNG — max 20MB. Admin will verify before publishing.</p>
+                </div>
+                <button id="upload-close-btn-notes" class="icon-btn" aria-label="Close upload form">✕</button>
+            </div>
+            <form id="upload-form-notes" class="upload-form">
+                <div class="upload-grid">
+                    <label class="form-field">
+                        <span>Title *</span>
+                        <input type="text" name="title" placeholder="Eg: DAA Unit 1 Notes" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Subject *</span>
+                        <input type="text" name="subject" placeholder="Eg: Data Structures" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Grade / Semester</span>
+                        <input type="text" name="gradeLevel" placeholder="Eg: 2nd Year / Class 12" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Intended For</span>
+                        <select name="intendedFor">
+                            <option value="College">College</option>
+                            <option value="School">School</option>
+                            <option value="Entrance">Entrance</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <label class="form-field">
+                        <span>Category</span>
+                        <input type="text" name="category" placeholder="Eg: BTech CSE">
+                    </label>
+                    <label class="form-field">
+                        <span>Tags (comma separated)</span>
+                        <input type="text" name="tags" placeholder="Eg: sorting, algorithms">
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span>Short description</span>
+                    <textarea name="description" rows="3" placeholder="What does this note cover?"></textarea>
+                </label>
+                <div class="upload-grid">
+                    <label class="form-field">
+                        <span>Your name *</span>
+                        <input type="text" name="contributorName" placeholder="Enter your name" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Email</span>
+                        <input type="email" name="contributorEmail" placeholder="We will not share this">
+                    </label>
+                    <label class="form-field">
+                        <span>Photo URL</span>
+                        <input type="url" name="contributorPhotoUrl" placeholder="Optional: link to your photo">
+                    </label>
+                </div>
+                <label class="form-field file-field">
+                    <span>Upload file *</span>
+                    <input type="file" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.png" required>
+                </label>
+                <div class="upload-actions">
+                    <button type="submit" class="btn" id="upload-submit-btn-notes">Submit for Review</button>
+                    <p id="upload-status-notes" class="upload-status" role="status" aria-live="polite"></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Student Uploads Preview -->
+    <section class="student-uploads">
+        <h2>Student Uploads (recent)</h2>
+        <div id="student-uploads">
+            <div class="upload-card">
+                <div class="upload-card__title">DAA Unit 1 Notes</div>
+                <div class="upload-card__meta">Subject: Data Structures · PDF</div>
+                <a class="upload-card__link" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" rel="noopener" aria-label="Open DAA Unit 1 Notes">View</a>
+            </div>
+            <div class="upload-card">
+                <div class="upload-card__title">Class 12 Physics Numericals</div>
+                <div class="upload-card__meta">Subject: Physics · PDF</div>
+                <a class="upload-card__link" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" rel="noopener" aria-label="Open Class 12 Physics Numericals">View</a>
+            </div>
+            <div class="upload-card">
+                <div class="upload-card__title">BTech CSE Sem 3 Cheatsheet</div>
+                <div class="upload-card__meta">Subject: Operating Systems · DOCX</div>
+                <a class="upload-card__link" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" rel="noopener" aria-label="Open BTech CSE Sem 3 Cheatsheet">View</a>
+            </div>
+        </div>
+        <a class="upload-card__link view-all" href="notes.html?filter=uploads" aria-label="View all uploads">View All Uploads</a>
+    </section>
+
+    <!-- Footer (Copied for simplicity) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>About Fightpur</p>
+                <p>Mission & Purpose: Provide free study materials.</p>
+                <p>Contact: fightpur@gmail.com</p>
+                <a href="#">Contribute Notes</a>
+                <a href="#">Report an Error</a>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="notes.html">Notes</a>
+                <a href="pyq.html">Previous Year Questions</a>
+                <a href="jobs.html">Job Updates</a>
+                <a href="placement.html">Placement Materials</a>
+                <a href="jobs.html">Exam Notifications</a>
+            </div>
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Disclaimer</a>
+                <p>&copy; 2023 Fightpur. All rights reserved.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://www.youtube.com/@fightpur" target="_blank">YouTube</a>
+                <a href="https://t.me/+PKU8zXHlxAA3MTE1" target="_blank">Telegram</a>
+                <a href="https://www.instagram.com/fight.pur/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/golu-kumar-parit/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

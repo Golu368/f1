@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Fightpur</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/admin-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>🔐 Admin Login</h1>
+                <p>Access the verification panel</p>
+            </div>
+            <div class="status-row">
+                <div class="status-dot" id="status-dot"></div>
+                <span id="status-text">Checking backend...</span>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div id="error-msg" class="error-msg"></div>
+                <div id="success-msg" class="success-msg"></div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="admin@fightpur.com" 
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-field">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            required
+                        >
+                        <button type="button" id="toggle-password" class="toggle-visibility">Show</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn" id="login-btn">Login</button>
+            </form>
+            
+            <div class="home-link">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smart API base: localhost:5002 for dev, same-origin for hosted
+        const API_BASE = (() => {
+            const { origin } = window.location;
+            const isLocal = origin.includes('localhost') || origin.includes('127.0.0.1');
+            if (isLocal) return 'http://localhost:5002/api';
+            return `${origin.replace(/\/$/, '')}/api`;
+        })();
+        const LOGIN_PATH = '/auth/admin-login-env'; // DB-free admin login
+        const loginForm = document.getElementById('login-form');
+        const loginBtn = document.getElementById('login-btn');
+        const errorMsg = document.getElementById('error-msg');
+        const successMsg = document.getElementById('success-msg');
+        const passwordInput = document.getElementById('password');
+        const togglePasswordBtn = document.getElementById('toggle-password');
+        const statusDot = document.getElementById('status-dot');
+        const statusText = document.getElementById('status-text');
+
+        // Toggle password visibility
+        togglePasswordBtn.addEventListener('click', () => {
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+            togglePasswordBtn.textContent = isHidden ? 'Hide' : 'Show';
+        });
+
+        async function checkHealth() {
+            try {
+                const res = await fetch(`${API_BASE}/health`, { cache: 'no-store' });
+                const ok = res.ok;
+                statusDot.className = `status-dot ${ok ? 'status-online' : 'status-offline'}`;
+                statusText.textContent = ok ? 'Backend online' : 'Backend offline';
+                return ok;
+            } catch (e) {
+                statusDot.className = 'status-dot status-offline';
+                statusText.textContent = 'Backend offline';
+                return false;
+            }
+        }
+
+        // Initial health check
+        checkHealth();
+
+        // Check if already logged in
+        if (localStorage.getItem('adminToken')) {
+            window.location.href = 'admin.html';
+        }
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Ensure backend reachable before submit
+            const healthy = await checkHealth();
+            if (!healthy) {
+                errorMsg.textContent = 'Server not reachable. Start backend on port 5000 or check your network.';
+                errorMsg.style.display = 'block';
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'Login';
+                return;
+            }
+            
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'Logging in...';
+
+            try {
+                const res = await fetch(`${API_BASE}${LOGIN_PATH}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await res.json();
+
+                if (!res.ok || !data.success) {
+                    throw new Error(data.message || 'Login failed');
+                }
+
+                // Store token
+                localStorage.setItem('adminToken', data.token);
+                
+                successMsg.textContent = 'Login successful! Redirecting...';
+                successMsg.style.display = 'block';
+                
+                setTimeout(() => {
+                    window.location.href = 'admin.html';
+                }, 1500);
+            } catch (err) {
+                if (err.message === 'Failed to fetch') {
+                    errorMsg.textContent = 'Server not reachable. Start backend on port 5000 (npm run dev) or check your network.';
+                } else {
+                    errorMsg.textContent = err.message || 'Invalid credentials';
+                }
+                errorMsg.style.display = 'block';
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'Login';
+            }
+        });
+    </script>
+</body>
+</html>

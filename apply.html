@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply Now (Demo)</title>
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/apply.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo-link">
+        <img src="fightpur.png" alt="Fightpur Logo" class="logo-img">
+        <span class="logo-text">Fightpur</span>
+      </a>
+
+      <!-- Toggle Button for Mobile Menu -->
+      <button class="toggle-btn" id="toggleBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="notes.html">Notes</a>
+          <ul class="dropdown-menu">
+            <li><a href="notes.html">Class 6–12 Notes</a></li>
+            <li><a href="notes.html">Diploma Notes</a></li>
+            <li><a href="notes.html">BTech Notes (CSE, ECE, ME, CE)</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="pyq.html">PYQ Papers</a>
+          <ul class="dropdown-menu">
+            <li><a href="pyq.html">Semester Exams</a></li>
+            <li><a href="pyq.html">Board Exams</a></li>
+            <li><a href="pyq.html">Entrance Exams</a></li>
+            <li><a href="pyq.html">Competitive Exams</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="notes.html">Study Materials</a>
+          <ul class="dropdown-menu">
+            <li><a href="notes.html">PDFs</a></li>
+            <li><a href="notes.html">Books & E-books</a></li>
+            <li><a href="notes.html">Formula Sheets</a></li>
+            <li><a href="notes.html">Lab Manuals</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="placement.html">Guidance</a>
+          <ul class="dropdown-menu">
+            <li><a href="placement.html">Roadmaps</a></li>
+            <li><a href="placement.html">Career Guidance</a></li>
+            <li><a href="placement.html">Time Management</a></li>
+            <li><a href="placement.html">Study Tips</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="placement.html">Placement Zone </a>
+          <ul class="dropdown-menu">
+            <li><a href="placement.html">Placement Materials</a></li>
+            <li><a href="placement.html">Interview Questions</a></li>
+            <li><a href="placement.html">Company-Based Questions (TCS, Infosys...)</a></li>
+            <li><a href="placement.html">Aptitude + Reasoning</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="jobs.html">Jobs & Updates</a>
+          <ul class="dropdown-menu">
+            <li><a href="jobs.html">Latest Job Alerts</a></li>
+            <li><a href="jobs.html">Government Jobs</a></li>
+            <li><a href="jobs.html">Private Jobs</a></li>
+            <li><a href="jobs.html">Internship Updates</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="jobs.html">Notifications</a>
+          <ul class="dropdown-menu">
+            <li><a href="jobs.html">Exam Notification</a></li>
+            <li><a href="jobs.html">Admit Card</a></li>
+            <li><a href="jobs.html">Result Updates</a></li>
+          </ul>
+        </li>
+        <li><a href="admin-login.html">Admin</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle Button -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <section style="max-width: 800px; margin: 40px auto;">
+    <h1>Apply Now</h1>
+    <p>Below are the job details and a direct application link.</p>
+
+    <article class="card" style="padding: 16px;">
+      <h2 id="job-title">Job Title</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li><strong>Company:</strong> <span id="company">—</span></li>
+        <li><strong>Role:</strong> <span id="role">—</span></li>
+        <li><strong>Location:</strong> <span id="location">—</span></li>
+        <li><strong>Salary:</strong> <span id="salary">—</span></li>
+        <li><strong>Requirements / Skills:</strong> <span id="skills">—</span></li>
+      </ul>
+      <div style="margin-top: 16px;">
+        <a id="apply-link" href="#" class="btn" target="_blank" rel="noopener">Apply Here</a>
+        <a href="jobs.html" class="btn" style="margin-left: 8px;">Back to Jobs</a>
+      </div>
+      <p class="muted" style="margin-top: 8px;">Note: This is a demo page. Replace the apply URL with your official application link.</p>
+    </article>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>About Fightpur</p>
+        <p>Mission & Purpose: Provide free study materials.</p>
+        <p>Contact: fightpur@gmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="notes.html">Notes</a>
+        <a href="pyq.html">Previous Year Questions</a>
+        <a href="jobs.html">Job Updates</a>
+        <a href="placement.html">Placement Materials</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Parse query params and populate job details
+    const params = new URLSearchParams(window.location.search);
+    const company = params.get('company') || 'Company Name';
+    const role = params.get('role') || 'Role';
+    const locationVal = params.get('location') || 'Location';
+    const salary = params.get('salary') || '—';
+    const skills = params.get('skills') || params.get('requirements') || '—';
+    const applyUrl = params.get('applyUrl') || 'https://example.com/apply';
+
+    document.getElementById('company').textContent = company;
+    document.getElementById('role').textContent = role;
+    document.getElementById('location').textContent = locationVal;
+    document.getElementById('salary').textContent = salary;
+    document.getElementById('skills').textContent = skills;
+    document.getElementById('job-title').textContent = `${role} - ${company}`;
+    const link = document.getElementById('apply-link');
+    link.href = applyUrl;
+  </script>
+</body>
+</html>

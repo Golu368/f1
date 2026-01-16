@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYQ- Fightpur</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/pyq.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="fightpur.png" alt="Fightpur Logo" class="logo-img">
+                <span class="logo-text">Fightpur</span>
+            </a>
+
+            <!-- Toggle Button for Mobile Menu -->
+            <button class="toggle-btn" id="toggleBtn" aria-label="Toggle menu" aria-expanded="false">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="notes.html">Notes</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notes.html">Class 6–12 Notes</a></li>
+                        <li><a href="notes.html">Diploma Notes</a></li>
+                        <li><a href="notes.html">BTech Notes (CSE, ECE, ME, CE)</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="pyq.html">PYQ Papers</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pyq.html">Semester Exams</a></li>
+                        <li><a href="pyq.html">Board Exams</a></li>
+                        <li><a href="pyq.html">Entrance Exams</a></li>
+                        <li><a href="pyq.html">Competitive Exams</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="notes.html">Study Materials</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notes.html">PDFs</a></li>
+                        <li><a href="notes.html">Books & E-books</a></li>
+                        <li><a href="notes.html">Formula Sheets</a></li>
+                        <li><a href="notes.html">Lab Manuals</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="placement.html">Guidance</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="placement.html">Roadmaps</a></li>
+                        <li><a href="placement.html">Career Guidance</a></li>
+                        <li><a href="placement.html">Time Management</a></li>
+                        <li><a href="placement.html">Study Tips</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="placement.html">Placement Zone </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="placement.html">Placement Materials</a></li>
+                        <li><a href="placement.html">Interview Questions</a></li>
+                        <li><a href="placement.html">Company-Based Questions (TCS, Infosys...)</a></li>
+                        <li><a href="placement.html">Aptitude + Reasoning</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="jobs.html">Jobs & Updates</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">Latest Job Alerts</a></li>
+                        <li><a href="jobs.html">Government Jobs</a></li>
+                        <li><a href="jobs.html">Private Jobs</a></li>
+                        <li><a href="jobs.html">Internship Updates</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="jobs.html">Notifications</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">Exam Notification</a></li>
+                        <li><a href="jobs.html">Admit Card</a></li>
+                        <li><a href="jobs.html">Result Updates</a></li>
+                    </ul>
+                </li>
+                <li><a href="admin-login.html">Admin</a></li>
+            </ul>
+
+            <!-- Dark Mode Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section>
+        <h1>Previous Year Question Papers (PYQs)</h1>
+        <p>Download PYQs for Semester exams, Board exams, Entrance exams (JEE, NEET, CUET), and Competitive (Bank, SSC, Railways).</p>
+        <div class="trending-grid">
+            <div class="card">
+                <h3>Semester Exams</h3>
+                <p>BTech Semester 1-8 papers.</p>
+                <a href="pyq.html?type=semester" class="btn pyq-open" data-category="semester" target="_blank">Click Here</a>
+            </div>
+            <div class="card">
+                <h3>Board Exams</h3>
+                <p>Class 10/12 CBSE/ICSE papers.</p>
+                <a href="pyq.html?type=board" class="btn pyq-open" data-category="board" target="_blank">Click Here</a>
+            </div>
+            <div class="card">
+                <h3>Entrance Exams</h3>
+                <p>JEE, NEET, CUET 2023 papers.</p>
+                <a href="pyq.html?type=entrance" class="btn pyq-open" data-category="entrance" target="_blank">Click Here</a>
+            </div>
+            <div class="card">
+                <h3>Competitive Exams</h3>
+                <p>Bank, SSC, Railways papers.</p>
+                <a href="pyq.html?type=competitive" class="btn pyq-open" data-category="competitive" target="_blank">Click Here</a>
+            </div>
+        </div>
+
+        <!-- PYQ Modal: collect details, then show download cards -->
+        <div id="pyq-modal" class="upload-panel" style="display:none; margin-top:20px;">
+            <div class="upload-panel__header">
+                <div>
+                    <p class="pill">Fill details to get PDFs</p>
+                    <h3 id="pyq-modal-title">Find PYQs</h3>
+                </div>
+                <button id="pyq-close" class="icon-btn" aria-label="Close">✕</button>
+            </div>
+            <form id="pyq-form" class="upload-form">
+                <div id="pyq-fields" class="upload-grid"></div>
+                <div class="upload-actions">
+                    <button type="submit" class="btn">Show Downloads</button>
+                </div>
+            </form>
+            <div id="pyq-results" class="trending-grid" style="margin-top:20px;"></div>
+        </div>
+
+    </section>
+
+    <!-- Footer (Copied for simplicity) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>About Fightpur</p>
+                <p>Mission & Purpose: Provide free study materials.</p>
+                <p>Contact: fightpur@gmail.com</p>
+                <a href="#">Contribute Notes</a>
+                <a href="#">Report an Error</a>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="notes.html">Notes</a>
+                <a href="pyq.html">Previous Year Questions</a>
+                <a href="jobs.html">Job Updates</a>
+                <a href="placement.html">Placement Materials</a>
+                <a href="jobs.html">Exam Notifications</a>
+            </div>
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Disclaimer</a>
+                <p>&copy; 2023 Fightpur. All rights reserved.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://www.youtube.com/@fightpur" target="_blank">YouTube</a>
+                <a href="https://t.me/+PKU8zXHlxAA3MTE1" target="_blank">Telegram</a>
+                <a href="https://www.instagram.com/fight.pur/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/golu-kumar-parit/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    (function(){
+        const modal = document.getElementById('pyq-modal');
+        const fieldsWrap = document.getElementById('pyq-fields');
+        const results = document.getElementById('pyq-results');
+        const title = document.getElementById('pyq-modal-title');
+        const closeBtn = document.getElementById('pyq-close');
+
+        const opts = {
+            semester: {
+                label: 'Semester Exams',
+                fields: [
+                    { name: 'degree', label: 'Degree Type', options: ['B.Tech','M.Tech','B.Com','M.Com','B.Sc','M.Sc','B.A','M.A','Diploma','Polytechnic','Others'] },
+                    { name: 'branch', label: 'Course / Branch', options: ['CSE','IT','AI & ML','Data Science','Mechanical','Electrical','Civil','Electronics (ECE)','Biotechnology','Other Branches'] },
+                    { name: 'universityType', label: 'University Type', options: ['Central Universities','State Universities','Private Universities','Deemed Universities'] },
+                    { name: 'state', label: 'State Wise University', options: ['Madhya Pradesh','Uttar Pradesh','Bihar','Rajasthan','Maharashtra','Karnataka','Tamil Nadu','West Bengal','All States'] },
+                    { name: 'university', label: 'University Name', options: ['RGPV Bhopal','BU Bhopal','DAVV Indore','JEC Jabalpur','AKTU','PTU','Other'] },
+                    { name: 'content', label: 'Content Type', options: ['PYQ Question Papers','Notes','Syllabus','Important Questions','Model Papers'] }
+                ]
+            },
+            board: {
+                label: 'Board Exams',
+                fields: [
+                    { name: 'board', label: 'Board Type', options: ['CBSE','ICSE','State Boards','NIOS','Other Boards'] },
+                    { name: 'class', label: 'Class', options: ['Class 10','Class 12'] },
+                    { name: 'stream', label: 'Stream (Class 12)', options: ['Science','Commerce','Arts'] },
+                    { name: 'subject', label: 'Subject', options: ['Physics','Chemistry','Maths','Biology','English'] },
+                    { name: 'stateBoard', label: 'State Board (optional)', options: ['Bihar Board (BSEB)','UP Board','MP Board','Rajasthan Board','Maharashtra Board','Tamil Nadu Board','Karnataka Board','West Bengal Board','All State Boards'] },
+                    { name: 'content', label: 'Content', options: ['PYQ Papers','Blueprints','Important Questions','Guess Papers'] }
+                ]
+            },
+            entrance: {
+                label: 'Entrance Exams',
+                fields: [
+                    { name: 'category', label: 'Category', options: ['Engineering','Medical','Management','Government','State Entrance Exams'] },
+                    { name: 'exam', label: 'Exam', options: ['JEE Main','JEE Advanced','BITSAT','VITEEE','NEET','CAT','XAT','CMAT','CUET','NDA','CDS'] }
+                ]
+            },
+            competitive: {
+                label: 'Competitive Exams',
+                fields: [
+                    { name: 'sector', label: 'Sector', options: ['SSC','Banking','Railway','Teaching','Defence'] },
+                    { name: 'exam', label: 'Exam', options: ['SSC CGL','SSC CHSL','SSC GD','SBI PO','IBPS PO','Clerk','RRB NTPC','Group D','CTET','TET','Army','Navy','Air Force'] }
+                ]
+            }
+        };
+
+        function buildFields(category){
+            const def = opts[category];
+            if (!def) return '';
+            return def.fields.map(f => {
+                const options = f.options.map(o => `<option value="${o}">${o}</option>`).join('');
+                return `<label class="form-field"><span>${f.label}</span><select name="${f.name}">${options}</select></label>`;
+            }).join('');
+        }
+
+        function openModal(category){
+            const def = opts[category];
+            if (!def) return;
+            title.textContent = `Find ${def.label}`;
+            fieldsWrap.innerHTML = buildFields(category);
+            results.innerHTML = '';
+            modal.style.display = 'block';
+        }
+
+        document.querySelectorAll('.pyq-open').forEach(btn => {
+            btn.addEventListener('click', (e)=>{
+                e.preventDefault();
+                openModal(btn.dataset.category);
+            });
+        });
+
+        closeBtn.addEventListener('click', ()=>{
+            modal.style.display = 'none';
+        });
+
+        document.getElementById('pyq-form').addEventListener('submit', function(e){
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const summary = Array.from(formData.entries()).map(([k,v]) => `${k}: ${v}`).join(' | ');
+            results.innerHTML = '';
+            const samples = [
+                { title: 'Download PDF 1', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+                { title: 'Download PDF 2', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+                { title: 'Download PDF 3', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' }
+            ];
+            samples.forEach(s => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `<h3>${s.title}</h3><p>${summary || 'Sample PDF result'}</p><a class="btn" href="${s.url}" target="_blank" rel="noopener">Download PDF</a>`;
+                results.appendChild(card);
+            });
+            // Scroll to results for visibility
+            modal.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Auto-open if query param type is present
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type');
+        if (type && opts[type]) {
+            openModal(type);
+        }
+    })();
+    </script>
+</body>
+</html>

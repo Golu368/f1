@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fightpur - Study Materials & Placement Guidance</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="fightpur.png" alt="Fightpur Logo" class="logo-img">
+                <span class="logo-text">Fightpur</span>
+            </a>
+
+            <!-- Toggle Button for Mobile Menu -->
+            <button class="toggle-btn" id="toggleBtn" aria-label="Toggle menu" aria-expanded="false">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="notes.html">Notes</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notes.html">Class 6–12 Notes</a></li>
+                        <li><a href="notes.html">Diploma Notes</a></li>
+                        <li><a href="notes.html">BTech Notes (CSE, ECE, ME, CE)</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="pyq.html">PYQ Papers</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pyq.html">Semester Exams</a></li>
+                        <li><a href="pyq.html">Board Exams</a></li>
+                        <li><a href="pyq.html">Entrance Exams</a></li>
+                        <li><a href="pyq.html">Competitive Exams</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="notes.html">Study Materials</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notes.html">PDFs</a></li>
+                        <li><a href="notes.html">Books & E-books</a></li>
+                        <li><a href="notes.html">Formula Sheets</a></li>
+                        <li><a href="notes.html">Lab Manuals</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="placement.html">Guidance</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="placement.html">Roadmaps</a></li>
+                        <li><a href="placement.html">Career Guidance</a></li>
+                        <li><a href="placement.html">Time Management</a></li>
+                        <li><a href="placement.html">Study Tips</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="placement.html">Placement Zone </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="placement.html">Placement Materials</a></li>
+                        <li><a href="placement.html">Interview Questions</a></li>
+                        <li><a href="placement.html">Company-Based Questions (TCS, Infosys...)</a></li>
+                        <li><a href="placement.html">Aptitude + Reasoning</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="jobs.html">Jobs & Updates</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">Latest Job Alerts</a></li>
+                        <li><a href="jobs.html">Government Jobs</a></li>
+                        <li><a href="jobs.html">Private Jobs</a></li>
+                        <li><a href="jobs.html">Internship Updates</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="jobs.html">Notifications</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">Exam Notification</a></li>
+                        <li><a href="jobs.html">Admit Card</a></li>
+                        <li><a href="jobs.html">Result Updates</a></li>
+                    </ul>
+                </li>
+                <li><a href="admin-login.html">Admin</a></li>
+            </ul>
+
+            <!-- Dark Mode Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (redesigned) -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Fightpur: Sabka Study Hub</h1>
+                <h2 class="hero-sub">Notes • PYQs • Jobs • Placement Prep — FREE for students</h2>
+                <div class="hero-ctas" aria-hidden="false">
+                    <a href="notes.html" class="btn btn-green">Explore Notes</a>
+                    <a href="pyq.html" class="btn btn-yellow">View PYQs</a>
+                    <a href="jobs.html" class="btn btn-green">Latest Jobs</a>
+                </div>
+            </div>
+            <div class="hero-illustration" aria-hidden="true">
+                <!-- Stats card: shows scale/trust numbers -->
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-icon">📘</div>
+                        <div class="stat-body">
+                            <div class="stat-value">5,000+</div>
+                            <div class="stat-label">Notes</div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">📄</div>
+                        <div class="stat-body">
+                            <div class="stat-value">1,200+</div>
+                            <div class="stat-label">PYQs</div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">💼</div>
+                        <div class="stat-body">
+                            <div class="stat-value">300+</div>
+                            <div class="stat-label">Jobs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sticky search removed; header search is global and in navbar -->
+
+    
+        <!-- Hero CTA -> Card Sections -->
+        <section class="section" id="notes">
+            <h2>Explore Resources</h2>
+
+            <div class="filters" style="max-width:1100px;margin:0 auto 22px;">
+                <select id="filter-course" aria-label="Filter by course">
+                    <option value="all">All Courses</option>
+                    <option value="btech">B TECH</option>
+                    <option value="diploma">DIPLOMA</option>
+                    <option value="mca">MCA</option>
+                    <option value="mba">MBA</option>
+                </select>
+                <select id="filter-branch" aria-label="Filter by branch">
+                    <option value="all">All Branches</option>
+                    <option value="cse">CSE</option>
+                    <option value="ece">ECE</option>
+                    <option value="me">ME</option>
+                </select>
+                <button id="clear-filters" class="btn clear-btn" aria-label="Clear Filters"><span class="icon">✖</span> Clear Filters</button>
+            </div>
+
+            <div class="card-grid">
+                    <div class="card notes-card" data-category="notes">
+                        <h3>📘 Notes</h3>
+                        <p class="card-desc">Semester-wise, subject-wise notes and curated summaries for quicker revision.</p>
+                        <a href="notes.html" class="btn btn-yellow">View Notes</a>
+                    </div>
+
+                <div class="card pyq-card" data-category="pyq">
+                    <h3>📝 PYQs</h3>
+                    <p class="card-desc">Previous year question papers, categorized by university and entrance exams.</p>
+                    <a href="pyq.html" class="btn btn-yellow">View PYQs</a>
+                </div>
+
+                <div class="card placement-card" data-category="placement">
+                    <h3>💼 Placement Prep</h3>
+                    <p class="card-desc">Resume templates, interview tips and company-wise guides to ace placements.</p>
+                    <a href="placement.html" class="btn btn-green">Start Prep</a>
+                </div>
+
+                <div class="card jobs-card" data-category="jobs">
+                    <h3>🚀 Job Updates</h3>
+                    <p class="card-desc">Daily job alerts, internships and company drives with application links.</p>
+                    <a href="jobs.html" class="btn btn-green">View Jobs</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Results -->
+    <!-- Course Selection (added) -->
+    
+
+    <section id="search-results" style="display:none;">
+        <h2>Search Results</h2>
+        <p id="results-summary"></p>
+        <div class="trending-grid" id="results-grid"></div>
+    </section>
+
+    <!-- Trending Sections -->
+    <section class="trending">
+        <h2>Trending Now</h2>
+        <div class="trending-grid">
+            <div class="card">
+                <h3>🔥 Latest Notes Added</h3>
+                <p>New BTech CSE notes uploaded.</p>
+                <div class="card-meta"><span class="pill">College</span></div>
+                <a href="notes.html" class="btn btn-yellow">View Notes</a>
+            </div>
+            <div class="card">
+                <h3>📘 Newest PYQs</h3>
+                <p>JEE Main 2023 papers.</p>
+                <div class="card-meta"><span class="pill">Entrance</span></div>
+                <a href="pyq.html" class="btn btn-yellow">View Paper</a>
+            </div>
+            <div class="card">
+                <h3>🎯 Most Viewed Placement Materials</h3>
+                <p>TCS interview questions.</p>
+                <div class="card-meta"><span class="pill">Placement</span></div>
+                <a href="placement.html" class="btn btn-green">Read</a>
+            </div>
+            <div class="card">
+                <h3>📢 Latest Job Notifications</h3>
+                <p>Govt jobs for engineers.</p>
+                <div class="card-meta"><span class="pill">Jobs</span></div>
+                <a href="jobs.html" class="btn btn-green">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Highlights -->
+    <section class="highlights">
+        <h2>Highlights</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <h3>🔥 Top Viewed Notes of the Week</h3>
+                <ul>
+                    <li><a href="notes.html">DAA Unit 1 Notes — BTech CSE</a></li>
+                    <li><a href="notes.html">Physics Numericals — Class 12</a></li>
+                    <li><a href="notes.html">Operating Systems Cheatsheet — BTech</a></li>
+                </ul>
+                <a class="view-all" href="notes.html">View all →</a>
+            </div>
+            <div class="highlight-card">
+                <h3>📑 Most Asked PYQs</h3>
+                <ul>
+                    <li><a href="pyq.html">JEE Main — Important Chapters</a></li>
+                    <li><a href="pyq.html">University Sem 4 — Common Questions</a></li>
+                    <li><a href="pyq.html">Board Exam Papers — Class 12</a></li>
+                </ul>
+                <a class="view-all" href="pyq.html">View all →</a>
+            </div>
+            <div class="highlight-card">
+                <h3>💼 Hot Jobs Today</h3>
+                <ul>
+                    <li><a href="jobs.html">Software Engineer — Infosys (Bangalore)</a></li>
+                    <li><a href="jobs.html">Graduate Trainee — TCS (Mumbai)</a></li>
+                    <li><a href="jobs.html">Intern — Wipro (Bangalore)</a></li>
+                </ul>
+                <a class="view-all" href="jobs.html">View all →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section class="notes-section">
+        <h2>Notes</h2>
+        <p>College notes (BTech, BSc, BCA, Diploma…) and School notes (Class 6–12 NCERT).</p>
+        <div class="notes-actions">
+            <a href="notes.html" class="btn btn-primary">View All Notes</a>
+            <a href="#" class="btn btn-outline" id="upload-toggle-btn">Upload Notes (For Students)</a>
+        </div>
+        <div id="upload-panel" class="upload-panel">
+            <div class="upload-panel__header">
+                <div>
+                    <p class="pill">Admin-reviewed uploads</p>
+                    <h3>Share your notes</h3>
+                    <p class="muted">Supported: PDF, DOC, DOCX, PPT, PPTX, PNG — max 20MB. Admin will verify before publishing.</p>
+                </div>
+                <button id="upload-close-btn" class="icon-btn" aria-label="Close upload form">✕</button>
+            </div>
+            <form id="upload-form" class="upload-form">
+                <div class="upload-grid">
+                    <label class="form-field">
+                        <span>Title *</span>
+                        <input type="text" name="title" placeholder="Eg: DAA Unit 1 Notes" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Subject *</span>
+                        <input type="text" name="subject" placeholder="Eg: Data Structures" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Grade / Semester</span>
+                        <input type="text" name="gradeLevel" placeholder="Eg: 2nd Year / Class 12" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Intended For</span>
+                        <select name="intendedFor">
+                            <option value="College">College</option>
+                            <option value="School">School</option>
+                            <option value="Entrance">Entrance</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <label class="form-field">
+                        <span>Category</span>
+                        <input type="text" name="category" placeholder="Eg: BTech CSE">
+                    </label>
+                    <label class="form-field">
+                        <span>Tags (comma separated)</span>
+                        <input type="text" name="tags" placeholder="Eg: sorting, algorithms">
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span>Short description</span>
+                    <textarea name="description" rows="3" placeholder="What does this note cover?"></textarea>
+                </label>
+                <div class="upload-grid">
+                    <label class="form-field">
+                        <span>Your name *</span>
+                        <input type="text" name="contributorName" placeholder="Enter your name" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Email</span>
+                        <input type="email" name="contributorEmail" placeholder="We will not share this">
+                    </label>
+                    <label class="form-field">
+                        <span>Photo URL</span>
+                        <input type="url" name="contributorPhotoUrl" placeholder="Optional: link to your photo">
+                    </label>
+                </div>
+                <label class="form-field file-field">
+                    <span>Upload file *</span>
+                    <input type="file" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.png" required>
+                </label>
+                <div class="upload-actions">
+                    <button type="submit" class="btn" id="upload-submit-btn">Submit for Review</button>
+                    <p id="upload-status" class="upload-status" role="status" aria-live="polite"></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Student Uploads Preview (centered between Notes and PYQ) -->
+    <section class="student-uploads">
+        <h2>Student Uploads (recent)</h2>
+        <div id="student-uploads" class="uploads-grid">
+            <div class="upload-card card">
+                <div class="upload-card__meta">PDF • Data Structures</div>
+                <div class="upload-card__title">DAA Unit 1 Notes</div>
+                <div class="upload-card__by">Uploaded by: <span class="uploader">Student</span></div>
+                <div class="upload-card__controls">
+                    <a class="upload-card__link preview-link" title="Preview first 2 pages" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" rel="noopener">Preview</a>
+                    <a class="upload-card__link" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download>Download</a>
+                </div>
+                    <div class="upload-card__stats"><button class="helpful-btn" aria-pressed="false">Helpful <span class="helpful-count">24</span></button> <span class="views">👁️ <span class="views-count">120</span></span></div>
+            </div>
+            <div class="upload-card card">
+                <div class="upload-card__meta">PDF • Physics</div>
+                <div class="upload-card__title">Class 12 Physics Numericals</div>
+                <div class="upload-card__by">Uploaded by: <span class="uploader">Student</span></div>
+                <div class="upload-card__controls">
+                    <a class="upload-card__link preview-link" title="Preview first 2 pages" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" rel="noopener">Preview</a>
+                    <a class="upload-card__link" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download>Download</a>
+                </div>
+                <div class="upload-card__stats"><button class="helpful-btn" aria-pressed="false">Helpful <span class="helpful-count">8</span></button> <span class="views">👁️ <span class="views-count">76</span></span></div>
+            </div>
+            <div class="upload-card card">
+                <div class="upload-card__meta">DOCX • Operating Systems</div>
+                <div class="upload-card__title">BTech CSE Sem 3 Cheatsheet</div>
+                <div class="upload-card__by">Uploaded by: <span class="uploader">Student</span></div>
+                <div class="upload-card__controls">
+                    <a class="upload-card__link preview-link" title="Preview first 2 pages" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" rel="noopener">Preview</a>
+                    <a class="upload-card__link" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download>Download</a>
+                </div>
+                <div class="upload-card__stats"><button class="helpful-btn" aria-pressed="false">Helpful <span class="helpful-count">14</span></button> <span class="views">👁️ <span class="views-count">98</span></span></div>
+            </div>
+        </div>
+        <a class="upload-card__link view-all" href="notes.html?filter=uploads" aria-label="View all uploads">View All Uploads →</a>
+    </section>
+
+    <!-- PYQ Section -->
+    <section class="pyq-section">
+        <h2>Previous Year Question Papers</h2>
+        <div class="mini-grid">
+            <a class="mini-card" href="pyq.html">🎓 <div>Semester Exams <small class="mini-note">University-wise papers</small></div></a>
+            <a class="mini-card" href="pyq.html">🏫 <div>Board Exams <small class="mini-note">State & CBSE papers</small></div></a>
+            <a class="mini-card" href="pyq.html">📝 <div>Entrance (JEE / NEET) <small class="mini-note">JEE / NEET / CUET</small></div></a>
+            <a class="mini-card" href="pyq.html">🏦 <div>Competitive <small class="mini-note">Bank, SSC, Railways</small></div></a>
+        </div>
+        <a href="pyq.html" class="btn btn-primary">View All PYQs</a>
+    </section>
+
+    <!-- Placement & Career Guidance Section -->
+    <section class="placement-section">
+        <h2>Placement & Career Guidance</h2>
+        <p class="placement-sub">Everything you need from resume to offer letter.</p>
+        <div class="mini-grid">
+            <div class="mini-card">📄 <div>Resume</div></div>
+            <div class="mini-card">💬 <div>Interview</div></div>
+            <div class="mini-card">🧠 <div>Aptitude</div></div>
+            <div class="mini-card">🗺️ <div>Roadmap</div></div>
+        </div>
+        <a href="placement.html" class="btn btn-primary">Explore Placement Zone</a>
+    </section>
+
+    <!-- Job Updates Section -->
+    <section class="jobs-section">
+        <h2>Job Updates</h2>
+        
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+                    <div class="mySlides fade" style="display:block;">
+            <div class="job-content">
+              <h3>Software Engineer - Infosys</h3>
+              <p>Location: Bangalore</p>
+              <p>Eligibility: BTech CSE</p>
+              <p>Package: ₹6-10 LPA</p>
+              <div class="job-meta"><span class="last-date-badge">Last Date: 20 Dec 2025</span><span>Full-time</span><span>Experience: Fresher</span></div>
+              <a href="apply.html?company=Infosys&role=Software%20Engineer&location=Bangalore&salary=%E2%82%B96-10%20LPA&skills=BTech%20CSE&applyUrl=https%3A%2F%2Fexample.com%2Fapply%3Fjob%3Dinfosys-swe" class="btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="job-content">
+              <h3>Graduate Trainee - TCS</h3>
+              <p>Location: Mumbai</p>
+              <p>Eligibility: Any Graduate</p>
+              <p>Package: ₹3-5 LPA</p>
+              <div class="job-meta"><span class="last-date-badge">Last Date: 25 Dec 2025</span><span>Full-time</span><span>Experience: Fresher</span></div>
+                              <a href="apply.html?company=TCS&role=Graduate%20Trainee&location=Mumbai&salary=%E2%82%B93-5%20LPA&skills=Any%20Graduate&applyUrl=https%3A%2F%2Fexample.com%2Fapply%3Fjob%3Dtcs-gt" class="btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="job-content">
+              <h3>Intern - Wipro</h3>
+              <p>Location: Bangalore</p>
+              <p>Eligibility: BTech 3rd Year</p>
+              <p>Stipend: ₹15k/month</p>
+              <div class="job-meta"><span class="last-date-badge">Last Date: 5 Jan 2026</span><span>Internship</span><span>Experience: Fresher</span></div>
+                              <a href="apply.html?company=Wipro&role=Intern&location=Bangalore&salary=%E2%82%B915k%2Fmonth&skills=BTech%203rd%20Year&applyUrl=https%3A%2F%2Fexample.com%2Fapply%3Fjob%3Dwipro-intern" class="btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="job-content">
+              <h3>Analyst - Accenture</h3>
+              <p>Location: Hyderabad</p>
+              <p>Eligibility: BE/BTech</p>
+              <p>Package: ₹4-7 LPA</p>
+              <div class="job-meta"><span class="last-date-badge">Last Date: 30 Dec 2025</span><span>Full-time</span><span>Experience: Any</span></div>
+                              <a href="apply.html?company=Accenture&role=Analyst&location=Hyderabad&salary=%E2%82%B94-7%20LPA&skills=BE%2FBTech&applyUrl=https%3A%2F%2Fexample.com%2Fapply%3Fjob%3Daccenture-analyst" class="btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="job-content">
+              <h3>SDE 1 - Amazon</h3>
+              <p>Location: Bangalore</p>
+              <p>Eligibility: BTech CSE</p>
+              <p>Package: ₹18-26 LPA</p>
+              <div class="job-meta"><span class="last-date-badge">Last Date: 10 Jan 2026</span><span>Full-time</span><span>Experience: 0-2 yrs</span></div>
+              <a href="apply.html?company=Amazon&role=SDE%201&location=Bangalore&salary=%E2%82%B918-26%20LPA&skills=BTech%20CSE&applyUrl=https%3A%2F%2Fexample.com%2Fapply%3Fjob%3Damazon-sde1" class="btn">Apply Now</a>
+            </div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div style="text-align:center; margin-top: 15px;">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+        <a href="jobs.html" class="btn" style="margin-top: 20px; display: inline-block;">View All Jobs</a>
+    </section>
+
+    <!-- Notifications Section -->
+    <section class="notifications-section">
+        <h2>Notifications</h2>
+        <div class="notification-cards">
+            <a href="https://neet.nta.nic.in/" target="_blank" rel="noopener" class="notification-card exam">
+                <span class="notification-icon">📋</span>
+                <span class="notification-text">Admit cards for NEET 2023</span>
+                <small class="notification-date">2025-12-01</small>
+            </a>
+            <a href="https://ssc.nic.in/" target="_blank" rel="noopener" class="notification-card result">
+                <span class="notification-icon">📊</span>
+                <span class="notification-text">Results for SSC Exams</span>
+                <small class="notification-date">2025-11-29</small>
+            </a>
+            <a href="https://example.com/exam-dates" target="_blank" rel="noopener" class="notification-card admit">
+                <span class="notification-icon">📅</span>
+                <span class="notification-text">Exam dates updated</span>
+                <small class="notification-date">2025-12-03</small>
+            </a>
+            <a href="notifications.html" class="notification-card view-all btn">View all notifications →</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Students Say</h2>
+        <div class="testimonial-list">
+            <div class="testimonial card">
+                <div class="avatar">RK</div>
+                <blockquote>“This site helped me clear my semester!”</blockquote>
+                <cite>Rohit — BTech CSE</cite>
+            </div>
+            <div class="testimonial card">
+                <div class="avatar">A</div>
+                <blockquote>“Notes quality is top-notch!”</blockquote>
+                <cite>Anjali — Class 12</cite>
+            </div>
+            <div class="testimonial card">
+                <div class="avatar">S</div>
+                <blockquote>“Placement tips helped me get my first job!”</blockquote>
+                <cite>Sanjay — BTech IT</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Get Latest Study Materials & Job Updates Daily</h2>
+        <form id="newsletter-form">
+            <input type="email" placeholder="Enter email for jobs & notes alerts" required>
+            <button type="submit" class="btn">Get Free Alerts</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>About Fightpur</p>
+                <p>Mission & Purpose: Provide free study materials.</p>
+                <p>Contact: fightpur@gmail.com</p>
+                <a href="#">Contribute Notes</a>
+                <a href="#">Report an Error</a>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="notes.html">Notes</a>
+                <a href="pyq.html">Previous Year Questions</a>
+                <a href="jobs.html">Job Updates</a>
+                <a href="placement.html">Placement Materials</a>
+                <a href="jobs.html">Exam Notifications</a>
+            </div>
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Disclaimer</a>
+                <p>&copy; 2023 Fightpur. All rights reserved.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://www.youtube.com/@fightpur" target="_blank">YouTube</a>
+                <a href="https://t.me/+PKU8zXHlxAA3MTE1" target="_blank">Telegram</a>
+                <a href="https://chat.whatsapp.com/your-group" target="_blank">WhatsApp</a>
+                <a href="https://www.instagram.com/fight.pur/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/golu-kumar-parit/" target="_blank">LinkedIn</a>
+                <a href="request-notes.html">Request Notes</a>
+                <p style="font-size:12px; margin-top:8px;">Disclaimer: Content is user-contributed. DMCA requests: contact fightpur@gmail.com</p>
+                <p style="font-size:13px; margin-top:8px; font-weight:600">Fightpur is a student-driven free education platform. We do not charge for notes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Preview modal (opened by preview links) -->
+    <div id="preview-modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-window" role="dialog" aria-modal="true" aria-label="Preview">
+            <div class="modal-toolbar">
+                <div class="modal-title">Preview (first 2 pages)</div>
+                <div>
+                    <button class="close-btn" id="preview-close" aria-label="Close preview">✕</button>
+                </div>
+            </div>
+            <div id="pdf-preview" style="height:100%; overflow:auto; padding:12px; background:#fff"></div>
+        </div>
+    </div>
+
+    <!-- PDF.js (for rendering preview pages) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

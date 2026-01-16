@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Verify Notes - Fightpur</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .admin-header {
+            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .admin-header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .submissions-filter {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .filter-btn.active {
+            background: #138808;
+            color: white;
+            border-color: #138808;
+        }
+        .submission-card {
+            background: white;
+            border: 3px solid transparent;
+            border-image: linear-gradient(to right, #FF9933, #FFFFFF, #138808) 1;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .submission-header {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .contributor-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .contributor-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .submission-info {
+            flex: 1;
+        }
+        .submission-info h3 {
+            margin: 0 0 4px 0;
+            color: #333;
+            font-size: 18px;
+        }
+        .submission-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #666;
+        }
+        .meta-item {
+            display: flex;
+            gap: 4px;
+        }
+        .meta-label {
+            font-weight: 600;
+            color: #333;
+        }
+        .submission-content {
+            margin: 12px 0;
+        }
+        .submission-content p {
+            margin: 8px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        .file-info {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-size: 13px;
+            color: #666;
+        }
+        .submission-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .action-btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .btn-approve {
+            background: #4caf50;
+            color: white;
+        }
+        .btn-approve:hover {
+            background: #388e3c;
+        }
+        .btn-reject {
+            background: #f44336;
+            color: white;
+        }
+        .btn-reject:hover {
+            background: #d32f2f;
+        }
+        .btn-edit {
+            background: #2196f3;
+            color: white;
+        }
+        .btn-edit:hover {
+            background: #1976d2;
+        }
+        .btn-view {
+            background: #9c27b0;
+            color: white;
+        }
+        .btn-view:hover {
+            background: #7b1fa2;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.show {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #f4f4f4;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .modal-header {
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 10px 12px;
+            border: 2px solid #e8f5e9;
+            border-radius: 8px;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 14px;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #138808;
+            box-shadow: 0 0 0 3px rgba(19, 136, 8, 0.1);
+        }
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .modal-actions button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .btn-save {
+            background: #138808;
+            color: white;
+        }
+        .btn-save:hover {
+            background: #0f6b07;
+        }
+        .btn-cancel {
+            background: #f0f0f0;
+            color: #333;
+        }
+        .btn-cancel:hover {
+            background: #e0e0e0;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .status-pending {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        .status-approved {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status-rejected {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #138808;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="fightpur.png" alt="Fightpur Logo" class="logo-img">
+                <span class="logo-text">Fightpur</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="admin.html">Admin Panel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Content -->
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>📋 Verify User Submissions</h1>
+            <p>Review and approve/reject uploaded notes from students</p>
+        </div>
+
+        <!-- Filter -->
+        <div class="submissions-filter">
+            <button class="filter-btn active" data-status="pending">Pending (0)</button>
+            <button class="filter-btn" data-status="approved">Approved (0)</button>
+            <button class="filter-btn" data-status="rejected">Rejected (0)</button>
+        </div>
+
+        <!-- Submissions List -->
+        <div id="submissions-list"></div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2>Edit Submission</h2>
+            </div>
+            <form id="edit-form" class="edit-form">
+                <div class="form-group">
+                    <label>Title *</label>
+                    <input type="text" id="edit-title" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject *</label>
+                    <input type="text" id="edit-subject" required>
+                </div>
+                <div class="form-group">
+                    <label>Grade / Semester</label>
+                    <input type="text" id="edit-gradeLevel">
+                </div>
+                <div class="form-group">
+                    <label>Intended For</label>
+                    <select id="edit-intendedFor">
+                        <option value="College">College</option>
+                        <option value="School">School</option>
+                        <option value="Entrance">Entrance</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" id="edit-category">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="edit-description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="button" class="btn-cancel" id="cancel-edit">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        let submissions = [];
+        let currentStatus = 'pending';
+        let editingId = null;
+
+        // Check authentication
+        const adminToken = localStorage.getItem('adminToken');
+        if (!adminToken) {
+            window.location.href = 'admin-login.html';
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('adminToken');
+            window.location.href = 'admin-login.html';
+        }
+
+        // Add logout button to navbar
+        document.addEventListener('DOMContentLoaded', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu) {
+                const logoutBtn = document.createElement('li');
+                logoutBtn.innerHTML = '<a href="#" onclick="logout(); return false;" style="background: #f44336; color: white;">Logout</a>';
+                navMenu.appendChild(logoutBtn);
+            }
+        });
+
+        async function loadSubmissions() {
+            const listDiv = document.getElementById('submissions-list');
+            listDiv.innerHTML = '<div class="loading"><div class="spinner"></div>Loading submissions...</div>';
+            
+            try {
+                const res = await fetch(`${API_BASE}/submissions?status=${currentStatus}`, {
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                });
+                
+                if (res.status === 401) {
+                    localStorage.removeItem('adminToken');
+                    window.location.href = 'admin-login.html';
+                    return;
+                }
+                
+                const data = await res.json();
+                submissions = (data && data.data) || [];
+                renderSubmissions();
+                updateFilterCounts();
+            } catch (err) {
+                listDiv.innerHTML = '<div class="empty-state">Error loading submissions</div>';
+            }
+        }
+
+        function renderSubmissions() {
+            const listDiv = document.getElementById('submissions-list');
+            
+            if (submissions.length === 0) {
+                listDiv.innerHTML = '<div class="empty-state">No submissions found</div>';
+                return;
+            }
+
+            listDiv.innerHTML = submissions.map(sub => `
+                <div class="submission-card">
+                    <div class="submission-header">
+                        <div class="contributor-avatar">
+                            ${sub.contributorPhotoUrl ? `<img src="${sub.contributorPhotoUrl}" alt="${sub.contributorName}">` : '👤'}
+                        </div>
+                        <div class="submission-info" style="flex: 1;">
+                            <h3>${escapeHtml(sub.title)}</h3>
+                            <div class="submission-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">By:</span>
+                                    <span>${escapeHtml(sub.contributorName || 'Anonymous')}</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Email:</span>
+                                    <span>${escapeHtml(sub.contributorEmail || 'N/A')}</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="status-badge status-${sub.status}">${sub.status}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submission-content">
+                        <p><strong>Subject:</strong> ${escapeHtml(sub.subject || 'N/A')}</p>
+                        <p><strong>Grade/Semester:</strong> ${escapeHtml(sub.gradeLevel || 'N/A')}</p>
+                        <p><strong>Intended For:</strong> ${escapeHtml(sub.intendedFor || 'N/A')}</p>
+                        <p><strong>Category:</strong> ${escapeHtml(sub.category || 'N/A')}</p>
+                        ${sub.description ? `<p><strong>Description:</strong> ${escapeHtml(sub.description)}</p>` : ''}
+                    </div>
+                    <div class="file-info">
+                        <strong>File:</strong> ${escapeHtml(sub.fileName || 'unknown')} (${formatFileSize(sub.fileSize || 0)})
+                    </div>
+                    <div class="submission-actions">
+                        ${sub.status === 'pending' ? `
+                            <button class="action-btn btn-approve" onclick="approveSubmission('${sub._id}')">✓ Approve</button>
+                            <button class="action-btn btn-reject" onclick="rejectSubmission('${sub._id}')">✗ Reject</button>
+                        ` : ''}
+                        <button class="action-btn btn-edit" onclick="openEditModal('${sub._id}')">Edit</button>
+                        <button class="action-btn btn-view" onclick="downloadFile('${sub._id}')">Download File</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const map = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'};
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024, sizes = ['B', 'KB', 'MB'], i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i];
+        }
+
+        async function approveSubmission(id) {
+            if (!confirm('Approve this submission?')) return;
+            try {
+                const res = await fetch(`${API_BASE}/submissions/${id}/approve`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                });
+                if (res.ok) {
+                    loadSubmissions();
+                } else {
+                    alert('Failed to approve');
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+
+        async function rejectSubmission(id) {
+            if (!confirm('Reject this submission?')) return;
+            try {
+                const res = await fetch(`${API_BASE}/submissions/${id}/reject`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                });
+                if (res.ok) {
+                    loadSubmissions();
+                } else {
+                    alert('Failed to reject');
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+
+        function openEditModal(id) {
+            const sub = submissions.find(s => s._id === id);
+            if (!sub) return;
+            
+            editingId = id;
+            document.getElementById('edit-title').value = sub.title || '';
+            document.getElementById('edit-subject').value = sub.subject || '';
+            document.getElementById('edit-gradeLevel').value = sub.gradeLevel || '';
+            document.getElementById('edit-intendedFor').value = sub.intendedFor || 'College';
+            document.getElementById('edit-category').value = sub.category || '';
+            document.getElementById('edit-description').value = sub.description || '';
+            
+            document.getElementById('edit-modal').classList.add('show');
+        }
+
+        document.getElementById('edit-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const updates = {
+                title: document.getElementById('edit-title').value,
+                subject: document.getElementById('edit-subject').value,
+                gradeLevel: document.getElementById('edit-gradeLevel').value,
+                intendedFor: document.getElementById('edit-intendedFor').value,
+                category: document.getElementById('edit-category').value,
+                description: document.getElementById('edit-description').value
+            };
+
+            try {
+                const res = await fetch(`${API_BASE}/submissions/${editingId}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${adminToken}`
+                    },
+                    body: JSON.stringify(updates)
+                });
+                if (res.ok) {
+                    closeEditModal();
+                    loadSubmissions();
+                } else {
+                    alert('Failed to update');
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        });
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').classList.remove('show');
+            editingId = null;
+        }
+
+        document.getElementById('modal-close').addEventListener('click', closeEditModal);
+        document.getElementById('cancel-edit').addEventListener('click', closeEditModal);
+
+        function downloadFile(id) {
+            const sub = submissions.find(s => s._id === id);
+            if (!sub || !sub.filePath) {
+                alert('File not available');
+                return;
+            }
+            window.open(`${API_BASE}/submissions/${id}/download`, '_blank');
+        }
+
+        async function updateFilterCounts() {
+            try {
+                const pending = await fetch(`${API_BASE}/submissions?status=pending`, {
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                }).then(r => r.json());
+                const approved = await fetch(`${API_BASE}/submissions?status=approved`, {
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                }).then(r => r.json());
+                const rejected = await fetch(`${API_BASE}/submissions?status=rejected`, {
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                }).then(r => r.json());
+                
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    const status = btn.dataset.status;
+                    const count = status === 'pending' ? (pending.data || []).length : 
+                                 status === 'approved' ? (approved.data || []).length :
+                                 (rejected.data || []).length;
+                    btn.textContent = status.charAt(0).toUpperCase() + status.slice(1) + ` (${count})`;
+                });
+            } catch (err) {
+                console.error('Error updating counts:', err);
+            }
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentStatus = btn.dataset.status;
+                loadSubmissions();
+            });
+        });
+
+        // Initial load
+        loadSubmissions();
+    </script>
+</body>
+</html>
