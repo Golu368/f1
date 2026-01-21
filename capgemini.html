@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capgemini Placement Preparation – Fightpur</title>
+    <meta name="description" content="Professional Capgemini placement preparation hub by Fightpur: workflow, roles, assessments, practice modules, sample questions, and tips." />
+    <link rel="stylesheet" href="./capgemini-hub.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div>Capgemini Prep · Fightpur</div>
+        </div>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#company">Overview</a>
+          <a href="#workflow">Hiring Flow</a>
+          <a href="#practice">Practice</a>
+          <a href="#roles">Roles & Packages</a>
+          <a href="#tips">Tips</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="../apply.html">Apply Now</a>
+          <a class="btn btn-primary" href="#games">Start Playing</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <h1 class="title">Capgemini Placement Prep</h1>
+            <p class="subtitle">Free, practice-first prep with cognitive games, hiring flow, and role insights.</p>
+            <div class="hero-bullets">
+              <span class="bullet">Capgemini-style cognitive games</span>
+              <span class="bullet">Superset-inspired hiring flow</span>
+              <span class="bullet">Free, no sign-in needed</span>
+            </div>
+            <div class="badge-row">
+              <span class="badge">Practice-only • Not official</span>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#practice">Start Practice</a>
+              <a class="btn btn-ghost" href="#workflow">View Hiring Flow</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="Highlights">
+            <div class="hero-stat">
+              <div>
+                <div class="stat-kicker">Focus</div>
+                <div class="stat-value">Company intro, hiring flow, practice modules</div>
+              </div>
+              <span class="pill">Placement-ready</span>
+            </div>
+            <div class="hero-stat">
+              <div>
+                <div class="stat-kicker">Audience</div>
+                <div class="stat-value">Final-year engineering students</div>
+              </div>
+              <span class="pill">Campus-friendly</span>
+            </div>
+            <div class="hero-stat">
+              <div>
+                <div class="stat-kicker">Access</div>
+                <div class="stat-value">Free practice • No sign-in</div>
+              </div>
+              <span class="pill">Frictionless</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Company Introduction -->
+      <section id="company">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Company Introduction</div>
+              <h2 class="section-title">Capgemini Overview</h2>
+              <div class="section-sub">Brief snapshot to set context for placements.</div>
+            </div>
+          </div>
+          <div class="grid">
+            <article class="card col-6">
+              <h3>Who They Are</h3>
+              <ul class="muted list">
+                <li><strong>Global leader:</strong> Consulting, cloud, data, digital transformation</li>
+                <li><strong>Presence:</strong> 50+ countries with strong India delivery hubs</li>
+                <li><strong>Focus:</strong> OOP, DBMS, cloud, cybersecurity, analytics</li>
+              </ul>
+            </article>
+            <article class="card col-6">
+              <h3>Why It Appeals to Freshers</h3>
+              <ul class="muted list">
+                <li>Structured onboarding and training for entry roles</li>
+                <li>Diverse projects across industries with global teams</li>
+                <li>Clear growth tracks from Analyst → Engineer → Specialist</li>
+                <li>Strong focus on certifications and upskilling</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Practice Modules (Games) -->
+      <section id="practice">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Practice Modules</div>
+              <h2 class="section-title">Skill-Aligned Modules</h2>
+              <div class="section-sub">Capgemini-style cognitive + coding practice: reasoning, attention, patterns, and logic.</div>
+            </div>
+            <div class="cta-row">
+              <button class="btn btn-ghost btn-small" id="filter-all">All</button>
+              <button class="btn btn-ghost btn-small" data-skill="reasoning">Reasoning</button>
+              <button class="btn btn-ghost btn-small" data-skill="attention">Attention</button>
+              <button class="btn btn-ghost btn-small" data-skill="patterns">Patterns</button>
+              <button class="btn btn-ghost btn-small" data-skill="motion">Motion</button>
+            </div>
+          </div>
+
+          <div class="grid" role="list" id="games">
+            <article class="card col-4" role="listitem" data-tags="reasoning attention">
+              <div class="card-head">
+                <div class="glyph" aria-hidden="true">DC</div>
+                <div>
+                  <h3>Deductive Challenge</h3>
+                  <p>Logical elimination to arrive at the only valid option. Mirrors reasoning and constraint questions.</p>
+                </div>
+              </div>
+              <div class="tagrow"><span class="tag">Reasoning</span><span class="tag">Logic</span></div>
+              <div class="action-row">
+                <a class="btn btn-primary btn-small" href="./game.html?game=deductive">Play</a>
+                <button class="btn btn-ghost btn-small" data-details>Details</button>
+              </div>
+              <div class="divider"></div>
+              <div class="muted" hidden data-details-panel>
+                Relevance: deduction, constraint handling, and accuracy under time.
+              </div>
+            </article>
+
+            <article class="card col-4" role="listitem" data-tags="attention switch">
+              <div class="card-head">
+                <div class="glyph" aria-hidden="true">SC</div>
+                <div>
+                  <h3>Switch Challenge</h3>
+                  <p>Rapid rule switching and response control. Builds attention management for changing prompts.</p>
+                </div>
+              </div>
+              <div class="tagrow"><span class="tag">Attention</span><span class="tag">Context Switching</span></div>
+              <div class="action-row">
+                <a class="btn btn-primary btn-small" href="./game.html?game=switch">Play</a>
+                <button class="btn btn-ghost btn-small" data-details>Details</button>
+              </div>
+              <div class="divider"></div>
+              <div class="muted" hidden data-details-panel>
+                Relevance: attention switching, working memory, and error control.
+              </div>
+            </article>
+
+            <article class="card col-4" role="listitem" data-tags="patterns reasoning">
+              <div class="card-head">
+                <div class="glyph" aria-hidden="true">GC</div>
+                <div>
+                  <h3>Grid Challenge</h3>
+                  <p>Abstract pattern completion across grids. Similar to matrix reasoning tasks.</p>
+                </div>
+              </div>
+              <div class="tagrow"><span class="tag">Patterns</span><span class="tag">Reasoning</span></div>
+              <div class="action-row">
+                <a class="btn btn-primary btn-small" href="./game.html?game=grid">Play</a>
+                <button class="btn btn-ghost btn-small" data-details>Details</button>
+              </div>
+              <div class="divider"></div>
+              <div class="muted" hidden data-details-panel>
+                Relevance: visual patterns, hypothesis testing, elimination.
+              </div>
+            </article>
+
+            <article class="card col-4" role="listitem" data-tags="patterns reasoning">
+              <div class="card-head">
+                <div class="glyph" aria-hidden="true">IC</div>
+                <div>
+                  <h3>Inductive Challenge</h3>
+                  <p>Infer hidden rules from examples and generalize outcomes. Trains inductive reasoning.</p>
+                </div>
+              </div>
+              <div class="tagrow"><span class="tag">Induction</span><span class="tag">Patterns</span></div>
+              <div class="action-row">
+                <a class="btn btn-primary btn-small" href="./game.html?game=inductive">Play</a>
+                <button class="btn btn-ghost btn-small" data-details>Details</button>
+              </div>
+              <div class="divider"></div>
+              <div class="muted" hidden data-details-panel>
+                Relevance: rule discovery, analogy creation, cognitive flexibility.
+              </div>
+            </article>
+
+            <article class="card col-4" role="listitem" data-tags="motion attention">
+              <div class="card-head">
+                <div class="glyph" aria-hidden="true">MC</div>
+                <div>
+                  <h3>Motion Challenge</h3>
+                  <p>Track moving items accurately under pressure. Supports attention and reaction stability.</p>
+                </div>
+              </div>
+              <div class="tagrow"><span class="tag">Motion</span><span class="tag">Attention</span></div>
+              <div class="action-row">
+                <a class="btn btn-primary btn-small" href="./game.html?game=motion">Play</a>
+                <button class="btn btn-ghost btn-small" data-details>Details</button>
+              </div>
+              <div class="divider"></div>
+              <div class="muted" hidden data-details-panel>
+                Relevance: selective attention, tracking, and quick decisions.
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hiring Workflow -->
+      <section id="workflow">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Capgemini Hiring Workflow</div>
+              <h2 class="section-title">Practice Mode (Superset-style)</h2>
+              <div class="section-sub">Capgemini-style preparation. Cognitive replaces traditional aptitude. Inspired by campus portals like Superset; not official.</div>
+              <div class="pill" style="margin-top:10px; display:inline-flex;">Capgemini-style prep • Superset-inspired</div>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-step">
+              <div class="step-dot"></div>
+              <div>
+                <h3>Application</h3>
+                <p class="muted">Submit via campus/Superset portal. Keep resume concise and metrics-led.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-dot"></div>
+              <div>
+                <h3>Resume Shortlisting</h3>
+                <p class="muted">Profile and academic checks. Highlight projects, internships, and impact.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-dot"></div>
+              <div>
+                <h3>English / Communication Assessment</h3>
+                <p class="muted">Reading + comprehension tasks; clear, concise responses. No heavy grammar focus.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-dot"></div>
+              <div>
+                <h3>Tech + Coding + Cognitive</h3>
+                <p class="muted">Capgemini-style practice: coding fundamentals plus gamified cognitive challenges.</p>
+                <div class="muted list-inline">Focus: Deductive Reasoning • Pattern Recognition • Attention & Switching • Processing Speed</div>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-dot"></div>
+              <div>
+                <h3>Technical Interview</h3>
+                <p class="muted">Projects, CS fundamentals, debugging thought process.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-dot"></div>
+              <div>
+                <h3>Offer & Onboarding</h3>
+                <p class="muted">Offer rollout, documentation, and joining formalities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roles & Packages -->
+      <section id="roles">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Packages (Indicative)</div>
+              <h2 class="section-title">Roles & Approximate Packages</h2>
+              <div class="section-sub">Values vary by year, location, and performance.</div>
+            </div>
+          </div>
+          <div class="table">
+            <div class="table-head">
+              <div>Role</div>
+              <div>Package (Approx)</div>
+              <div>Location</div>
+            </div>
+            <div class="table-row">
+              <div>Analyst</div>
+              <div>₹4–5 LPA</div>
+              <div>PAN India</div>
+            </div>
+            <div class="table-row">
+              <div>Software Engineer</div>
+              <div>₹6–7 LPA</div>
+              <div>Metro Cities</div>
+            </div>
+            <div class="table-row">
+              <div>Specialist / Advanced Tracks</div>
+              <div>₹7–8+ LPA</div>
+              <div>Role-dependent</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Assessment Structure -->
+      <section id="structure">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Assessment Structure</div>
+              <h2 class="section-title">Sections, Duration, Difficulty</h2>
+              <div class="section-sub">Approximate breakdown to guide practice. Capgemini leans on gamified cognitive rounds instead of traditional aptitude/verbal batteries.</div>
+            </div>
+          </div>
+          <div class="grid">
+            <article class="card col-6">
+              <h3>Gamified Cognitive (Attention + Logic)</h3>
+              <p class="muted">Duration: ~20–25 mins • Difficulty: Moderate</p>
+              <ul class="muted list">
+                <li>Pattern spotting and matrix completion</li>
+                <li>Rule switching and selective attention</li>
+                <li>Speed/accuracy tradeoffs with simple stimuli</li>
+              </ul>
+            </article>
+            <article class="card col-6">
+              <h3>Communication & Reading</h3>
+              <p class="muted">Duration: ~15–20 mins • Difficulty: Easy–Moderate</p>
+              <ul class="muted list">
+                <li>Reading comprehension</li>
+                <li>Sentence improvement, grammar basics</li>
+                <li>Vocabulary in context</li>
+              </ul>
+            </article>
+            <article class="card col-6">
+              <h3>Technical (CS Fundamentals)</h3>
+              <p class="muted">Duration: ~20–25 mins • Difficulty: Moderate</p>
+              <ul class="muted list">
+                <li>OOP, DBMS joins/keys, OS basics, CN fundamentals</li>
+                <li>Simple DSA: arrays/strings, searching/sorting logic</li>
+                <li>Basic debugging / output prediction</li>
+              </ul>
+            </article>
+            <article class="card col-6">
+              <h3>Coding (Basic to Medium)</h3>
+              <p class="muted">Duration: ~20–30 mins • Difficulty: Moderate</p>
+              <ul class="muted list">
+                <li>Loops, conditions, functions with clear I/O</li>
+                <li>Array/string manipulation and edge cases</li>
+                <li>Emphasis on readability and correctness</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sample Questions (within Practice context) -->
+      <section id="questions" style="padding: 32px 0; background: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.06);">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Sample Questions</div>
+              <h2 class="section-title">Practice Examples</h2>
+              <div class="section-sub" style="color: #fbbf24; font-weight: 500;">Examples are original and inspired by public patterns. No real company questions used.</div>
+            </div>
+          </div>
+          <div class="grid">
+            <article class="card col-6">
+              <h3>Technical</h3>
+              <ul class="muted list">
+                <li>What is polymorphism in OOP?</li>
+                <li>Find the second largest distinct element in an array</li>
+                <li>Explain primary key vs foreign key</li>
+                <li>Predict loop output with increment in condition</li>
+              </ul>
+            </article>
+            <article class="card col-6">
+              <h3>Cognitive</h3>
+              <ul class="muted list">
+                <li>3×3 grid: which option completes the pattern?</li>
+                <li>Rule switches every 5 prompts: how many use Rule B in 20?</li>
+                <li>Track highlighted shapes through motion</li>
+                <li>Sequence: add 2, multiply 2, starting 1. Find 6th term</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pro Tips -->
+      <section id="tips">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Pro Tips</div>
+              <h2 class="section-title">Do & Don’t</h2>
+              <div class="section-sub">Stay precise, manage time, and practice ethically.</div>
+            </div>
+          </div>
+          <div class="grid">
+            <article class="card col-6">
+              <h3>Do</h3>
+              <ul class="muted list">
+                <li>Practice daily with a timer</li>
+                <li>Read questions fully before answering</li>
+                <li>Prepare 2 strong project walkthroughs</li>
+                <li>Write clean, readable code with edge cases</li>
+              </ul>
+            </article>
+            <article class="card col-6">
+              <h3>Don’t</h3>
+              <ul class="muted list">
+                <li>Guess blindly; eliminate and skip if unsure</li>
+                <li>Ignore time; budget per section</li>
+                <li>Panic on hard items; move and revisit</li>
+                <li>Use leaked materials; stay ethical</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">FAQ</div>
+              <h2 class="section-title">Questions & Answers</h2>
+            </div>
+          </div>
+          <div class="faq">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false"><span>Do I need to sign up?</span><span>＋</span></button>
+              <div class="faq-a">No account required — launch and practice instantly.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false"><span>Are these official Capgemini assessments?</span><span>＋</span></button>
+              <div class="faq-a">No. This is an educational practice hub inspired by typical skill areas. It is not an official Capgemini website.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false"><span>What do the Play buttons do?</span><span>＋</span></button>
+              <div class="faq-a">They open the practice game page (game.html) with the selected module, e.g., ?game=grid.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disclaimer Section Removed - Now in Footer -->
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="grid">
+          <div class="col-6">
+            <div class="brand" style="margin-bottom:8px;">
+              <div class="brand-badge" aria-hidden="true"></div>
+              <div>Capgemini Prep · Fightpur</div>
+            </div>
+            <div class="muted">Capgemini-style preparation hub by Fightpur. Practice cognitive + coding modules with clean, legal content.</div>
+            <div class="muted" style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+              <strong>Disclaimer:</strong> This is an educational practice hub, not an official Capgemini website. All content is based on typical exam patterns and student experiences.
+            </div>
+          </div>
+          <div class="col-6" style="display:flex; gap:10px; justify-content:flex-end; align-items:start;">
+            <a class="btn btn-ghost btn-small" href="#practice">Practice</a>
+            <a class="btn btn-primary btn-small" href="../apply.html">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Rules Modal -->
+    <div class="rules-modal" id="rules-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+      <div class="rules-backdrop" data-close></div>
+      <div class="rules-content" role="document" tabindex="-1">
+        <header class="rules-head">
+          <div>
+            <div class="pill" id="rules-category">Cognitive Skill</div>
+            <h3 id="rules-title" class="rules-title">Game</h3>
+          </div>
+          <button class="icon-close" aria-label="Close" data-close>×</button>
+        </header>
+        <div class="rules-body">
+          <p id="rules-desc" class="rules-desc"></p>
+          <h4 class="rules-how">How to Play</h4>
+          <ul id="rules-list" class="rules-list"></ul>
+        </div>
+        <footer class="rules-foot">
+          <button class="btn btn-ghost btn-small" data-close>Cancel</button>
+          <a class="btn btn-primary btn-small" id="rules-start" href="#">Start</a>
+        </footer>
+      </div>
+    </div>
+
+    <script src="./capgemini-hub.js"></script>
+  </body>
+  </html>

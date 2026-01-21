@@ -54,7 +54,7 @@
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
-    background: white;
+    background: var(--card-bg);
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -212,4 +212,14 @@
 
 .empty-state p {
     margin-bottom: 24px;
+}
+
+/* RGPV button inside Semester card */
+.rgpv-link-btn {
+    margin-top: 10px;
+    background: #138808;
+}
+
+.rgpv-link-btn:hover {
+    background: #0f6a06;
 }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGPV Previous Year Papers - Fightpur</title>
+    <link rel="stylesheet" href="./rgpv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h2>Fightpur</h2>
+                <p>RGPV Study Materials</p>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="notes.html">Notes</a>
+                <a href="rgpv.html" class="active">RGPV Papers</a>
+                <a href="jobs.html">Jobs</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span id="themeIcon">🌙</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container">
+        <!-- Title -->
+        <section class="title-section">
+            <h1>RGPV Previous Year Question Papers</h1>
+            <p>Download previous year papers for all branches and semesters</p>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-box">
+                <label for="course">Course:</label>
+                <select id="course">
+                    <option value="">-- All Courses --</option>
+                    <option value="btech">B Tech</option>
+                    <option value="bpharmacy">B Pharmacy</option>
+                    <option value="dpharmacy">D Pharmacy</option>
+                    <option value="dpharmacy">M Pharmacy</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="mca">MCA</option>
+                    <option value="mtech">M Tech</option>
+                    <option value="barch">B Arch</option>
+                    <option value="march">M Arch</option>
+                    <option value="mam">MAM</option>
+                    <option value="mba">MBA</option>
+                    <option value="phd">PHD</option>
+                    <option value="others">OTHERS</option>
+                </select>
+            </div>
+
+            <div class="filter-box">
+                <label for="branch">Branch:</label>
+                <select id="branch">
+                    <option value="">-- All Branches --</option>
+                    <option value="cse">Computer Science (CSE)</option>
+                    <option value="ece">Electronics & Communication (ECE)</option>
+                    <option value="me">Mechanical Engineering (ME)</option>
+                    <option value="ce">Civil Engineering (CE)</option>
+                    <option value="ee">Electrical Engineering (EE)</option>
+                    <option value="it">Information Technology (IT)</option>
+                    <option value="ai">Artificial Intelligence (AI)</option>
+                    <option value="aids">AIDS (AD)</option>
+                    <option value="aiml">AIML (AL)</option>
+                    <option value="auto">AUTO</option>
+                    <option value="autorobo">AUTO & ROBO</option>
+                    <option value="chemical">CHEMICAL</option>
+                    <option value="civil">CIVIL</option>
+                    <option value="csbs">CSBS (CB)</option>
+                    <option value="cseds">CSE-DS (CD)</option>
+                    <option value="cseiot">CSE-IOT</option>
+                    <option value="csit">CSIT</option>
+                    <option value="3dag">3DAG</option>
+                    <option value="iot">IOT</option>
+                    <option value="iotcs">IS (IOT-CS)</option>
+                    <option value="cy">CY</option>
+                    <option value="eeeeeex">E (EC EE EEE EI EX)</option>
+                    <option value="ft">FT</option>
+                    <option value="mining">MINING (MI)</option>
+                    <option value="mm">MM</option>
+                    <option value="rarobo">RA + ROBO AND MECH</option>
+                    <option value="sd">SD (CSD)</option>
+                    <option value="others">OTHERS</option>
+                </select>
+            </div>
+
+            <div class="filter-box">
+                <label for="semester">Semester:</label>
+                <select id="semester">
+                    <option value="">-- All Semesters --</option>
+                    <option value="1">1st Semester</option>
+                    <option value="2">2nd Semester</option>
+                    <option value="3">3rd Semester</option>
+                    <option value="4">4th Semester</option>
+                    <option value="5">5th Semester</option>
+                    <option value="6">6th Semester</option>
+                    <option value="7">7th Semester</option>
+                    <option value="8">8th Semester</option>
+                </select>
+            </div>
+
+            <button id="reset-btn" class="btn-reset">Reset</button>
+        </section>
+
+        <!-- Papers Display -->
+        <section class="papers-section">
+            <div class="papers-info">
+                <p>Total Papers: <span id="paper-count">0</span></p>
+            </div>
+
+            <div class="papers-list" id="papers-container">
+                <!-- Papers will be loaded here by JS -->
+            </div>
+
+            <div id="no-papers" class="no-papers" style="display:none;">
+                <p>❌ No papers found. Try changing filters.</p>
+            </div>
+            
+            <div class="cta-panel" style="margin-top: 26px; padding: 18px; border-radius: 10px; background: linear-gradient(135deg, rgba(96, 165, 250, 0.08), rgba(16, 185, 129, 0.08)); border: 1px solid #444;">
+                Want a specific PYQ added? Email <a href="mailto:fightpur@gmail.com" style="color: #60a5fa; font-weight: 700; text-decoration: underline;">fightpur@gmail.com</a> or send the photo; we will add it here after verification.
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-section">
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Papers Available</p>
+            </div>
+            <div class="stat">
+                <h3>10+</h3>
+                <p>Courses</p>
+            </div>
+            <div class="stat">
+                <h3>30+</h3>
+                <p>Branches</p>
+            </div>
+            <div class="stat">
+                <h3>2020-2024</h3>
+                <p>Year Range</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Fightpur. All rights reserved.</p>
+        <p>For queries: <strong>fightpur@gmail.com</strong></p>
+    </footer>
+
+    <script src="./rgpv.js"></script>
+</body>
+</html>

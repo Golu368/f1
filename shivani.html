@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RGPV Shivani E-Books - Fightpur</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/rgpv-new.css">
+	<style>
+		/* Page-local tweaks for the e-book view - Dark Mode (default) */
+		body { background: #0f172a; color: #e2e8f0; transition: all 0.3s ease; }
+		.title-section small { color: #94a3b8; display: block; margin-top: 6px; }
+		.filter-section { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+		.filter-box input,
+		.filter-box select { background-color: #1e293b; border-color: #334155; color: #e2e8f0; transition: all 0.3s ease; }
+		.search-box input { width: 100%; padding: 12px 14px; border-radius: 6px; border: 1.5px solid #334155; background: #0b1220; color: #e2e8f0; }
+		.search-box input:focus { outline: 2px solid #60a5fa; }
+		.paper-item { background: #0b1220; border-color: #1f2937; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.45); transition: all 0.3s ease; }
+		.paper-item:hover { border-color: #38bdf8; box-shadow: 0 6px 18px rgba(56, 189, 248, 0.25); }
+		.paper-name { color: #e2e8f0; }
+		.paper-meta { color: #94a3b8; }
+		.paper-meta .pill { background: rgba(56, 189, 248, 0.12); color: #7dd3fc; border: 1px solid rgba(125, 211, 252, 0.45); padding: 4px 10px; border-radius: 999px; font-size: 12px; }
+		.ebook-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+		.ebook-tags span { background: #1e293b; color: #cbd5e1; padding: 6px 10px; border-radius: 6px; font-size: 12px; border: 1px solid #334155; }
+		.btn-view { padding: 8px 14px; background: #38bdf8; color: #0b1220; border-radius: 4px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.25s ease; }
+		.btn-view:hover { background: #0ea5e9; }
+		.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 22px 0; }
+		.stat-card { background: #0b1220; border: 1px solid #1f2937; padding: 14px; border-radius: 8px; box-shadow: 0 2px 10px rgba(15, 23, 42, 0.35); transition: all 0.3s ease; }
+		.stat-card h3 { color: #38bdf8; font-size: 18px; margin-bottom: 4px; }
+		.stat-card p { color: #94a3b8; font-size: 13px; }
+		.cta-panel { margin-top: 26px; padding: 18px; border-radius: 10px; background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(16, 185, 129, 0.08)); border: 1px solid #1f2937; transition: all 0.3s ease; }
+		.cta-panel a { color: #38bdf8; font-weight: 700; text-decoration: underline; }
+		.no-papers { text-align: center; padding: 20px; color: #cbd5e1; }
+		.header { background: #0b1220; transition: all 0.3s ease; }
+		.nav-links a.active { color: #38bdf8; }
+		
+		/* Light Mode Overrides */
+		body:not(.dark-mode) { background: #f8fafc; color: #1e293b; }
+		body:not(.dark-mode) .title-section small { color: #64748b; }
+		body:not(.dark-mode) .title-section h1 { color: #0f172a; }
+		body:not(.dark-mode) .title-section p { color: #475569; }
+		body:not(.dark-mode) .filter-box input,
+		body:not(.dark-mode) .filter-box select { background-color: #ffffff; border-color: #cbd5e1; color: #1e293b; }
+		body:not(.dark-mode) .filter-section { background-color: #ffffff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+		body:not(.dark-mode) .paper-item { background: #ffffff; border-color: #e2e8f0; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); }
+		body:not(.dark-mode) .paper-item:hover { border-color: #3b82f6; box-shadow: 0 6px 18px rgba(59, 130, 246, 0.15); }
+		body:not(.dark-mode) .paper-name { color: #0f172a; }
+		body:not(.dark-mode) .paper-code { background-color: #dbeafe; color: #1e40af; }
+		body:not(.dark-mode) .paper-meta { color: #64748b; }
+		body:not(.dark-mode) .paper-meta .pill { background: rgba(59, 130, 246, 0.1); color: #1e40af; border: 1px solid rgba(59, 130, 246, 0.3); }
+		body:not(.dark-mode) .ebook-tags span { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+		body:not(.dark-mode) .btn-view { background: #3b82f6; color: #ffffff; }
+		body:not(.dark-mode) .btn-view:hover { background: #2563eb; }
+		body:not(.dark-mode) .btn-download { background: #10b981; }
+		body:not(.dark-mode) .btn-download:hover { background: #059669; }
+		body:not(.dark-mode) .stat-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+		body:not(.dark-mode) .stat-card h3 { color: #3b82f6; }
+		body:not(.dark-mode) .stat-card p { color: #64748b; }
+		body:not(.dark-mode) .cta-panel { background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05)); border: 1px solid #e2e8f0; }
+		body:not(.dark-mode) .cta-panel a { color: #2563eb; }
+		body:not(.dark-mode) .no-papers { color: #64748b; }
+		body:not(.dark-mode) .header { background: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); }
+		body:not(.dark-mode) .logo h2 { color: #3b82f6; }
+		body:not(.dark-mode) .logo p { color: #64748b; }
+		body:not(.dark-mode) .nav-links a { color: #64748b; }
+		body:not(.dark-mode) .nav-links a:hover,
+		body:not(.dark-mode) .nav-links a.active { color: #3b82f6; }
+		body:not(.dark-mode) .papers-section { background-color: rgba(255, 255, 255, 0.6); }
+		body:not(.dark-mode) .papers-info { border-bottom: 1px solid #e2e8f0; color: #64748b; }
+		body:not(.dark-mode) .papers-info span { color: #3b82f6; }
+		body:not(.dark-mode) .btn-reset { background-color: #ef4444; }
+		body:not(.dark-mode) .btn-reset:hover { background-color: #dc2626; }
+		body:not(.dark-mode) .footer { background-color: #0f172a; color: #e2e8f0; }
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="header-container">
+			<div class="logo">
+				<h2>Fightpur</h2>
+				<p>RGPV Shivani</p>
+			</div>
+			<nav class="nav-links">
+				<a href="../index.html">Home</a>
+				<a href="../notes.html">Notes</a>
+				<a href="../rgpv.html">RGPV Papers</a>
+				<a href="shivani.html" class="active">RGPV Shivani</a>
+				<a href="../jobs.html">Jobs</a>
+				<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+					<span id="themeIcon">🌙</span>
+				</button>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="title-section">
+			<h1>RGPV Shivani E-Book Library</h1>
+			<p>Download curated PDF shivani for every RGPV course and branch.</p>
+			<small>Tailored for RGPV Shivani students.</small>
+			<div class="stats-row">
+				<div class="stat-card"><h3 id="stat-total">--</h3><p>Total e-books</p></div>
+				<div class="stat-card"><h3 id="stat-courses">--</h3><p>Courses covered</p></div>
+				<div class="stat-card"><h3 id="stat-branches">--</h3><p>Branches covered</p></div>
+				<div class="stat-card"><h3 id="stat-semesters">--</h3><p>Semester span</p></div>
+			</div>
+		</section>
+
+		<section class="filter-section">
+			<div class="filter-box">
+				<label for="course">Course</label>
+				<select id="course">
+					<option value="">All Courses</option>
+					<option value="btech">B Tech</option>
+					<option value="bpharmacy">B Pharmacy</option>
+					<option value="dpharmacy">D Pharmacy</option>
+					<option value="diploma">Diploma</option>
+					<option value="mca">MCA</option>
+					<option value="mtech">M Tech</option>
+					<option value="barch">B Arch</option>
+					<option value="mba">MBA</option>
+				</select>
+			</div>
+			<div class="filter-box">
+				<label for="branch">Branch</label>
+				<select id="branch">
+					<option value="">All Branches</option>
+					<option value="cse">CSE</option>
+					<option value="ece">ECE</option>
+					<option value="me">ME</option>
+					<option value="ce">CE</option>
+					<option value="ee">EE</option>
+					<option value="it">IT</option>
+					<option value="ai">AI</option>
+					<option value="management">Management</option>
+				</select>
+			</div>
+			<div class="filter-box">
+				<label for="semester">Semester</label>
+				<select id="semester">
+					<option value="">All Semesters</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+			<button id="reset-btn" class="btn-reset">Reset</button>
+		</section>
+
+		<section class="papers-section">
+			<div class="papers-info">
+				<p>Visible: <span id="ebook-count">0</span> • Library size: <span id="ebook-total">0</span></p>
+			</div>
+			<div class="papers-list" id="ebooks-container"></div>
+			<div id="no-ebooks" class="no-papers" style="display:none;">
+				<p>❌ No e-books found. Try changing filters or the search query.</p>
+			</div>
+			<div class="cta-panel">
+				Want a specific book added? Email <a href="mailto:fightpur@gmail.com">fightpur@gmail.com</a> or send the drive link; we will add it here after verification.
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<p>&copy; 2026 Fightpur. All rights reserved.</p>
+		<p>For queries: <strong>fightpur@gmail.com</strong></p>
+	</footer>
+
+	<script src="rgpv-ebooks.js"></script>
+</body>
+</html>
